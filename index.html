@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하와이 팜스 어학원</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="하와이 팜스 어학원 로고">
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span>MENU</span>
+                <span class="menu-icon">☰</span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-menu-header">
+                    <div class="nav-menu-logo">
+                        <img src="logo.png" alt="하와이 팜스 어학원 로고">
+                    </div>
+                    <button class="menu-close" id="menuClose">✕</button>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#home" data-section="h-1">홈</a></li>
+                    <li><a href="#about" data-section="h-3">소개</a></li>
+                    <li><a href="#preschool" data-section="h-7">유아</a></li>
+                    <li><a href="#elementary" data-section="h-8">초등</a></li>
+                    <li><a href="#middle-high" data-section="h-9">중고등</a></li>
+                    <li><a href="#price" data-section="h-12">PRICE</a></li>
+                    <li><a href="#contact" data-section="h-13">문의하기</a></li>
+                </ul>
+            </nav>
+            <div class="nav-menu-overlay" id="menuOverlay"></div>
+            <div class="header-naver-talk pc-only">
+                <a href="#" class="naver-talk-btn">네이버톡톡 문의하기</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main>
+        <!-- 히어로 섹션 -->
+        <section id="home" class="hero-section">
+            <div class="hero-image-container">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="images/mob/h-1-m.png">
+                    <img src="images/pc/h-1.png" alt="하와이 팜스 어학원" class="hero-image" id="heroImage">
+                </picture>
+            </div>
+            <div class="fireworks-container">
+                <div class="firework firework-left">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+                <div class="firework firework-right">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-inquiry-btn">
+                    <a href="#contact" class="btn-inquiry">문의하기</a>
+                </div>
+            </div>
+            <!-- 드래그 가능한 투명 원 -->
+            <div class="draggable-circle" id="draggableCircle">
+                <span>하와이팜스어학원</span>
+            </div>
+        </section>
+
+        <!-- 소개 섹션 -->
+        <section id="about" class="content-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mob/h-3-m.png">
+                <img src="images/pc/h-3.png" alt="소개" class="section-image">
+            </picture>
+        </section>
+
+        <!-- 유아 섹션 -->
+        <section id="preschool" class="content-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mob/h-7-m.png">
+                <img src="images/pc/h-7.png" alt="유아" class="section-image">
+            </picture>
+        </section>
+
+        <!-- 초등 섹션 -->
+        <section id="elementary" class="content-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mob/h-8-m.png">
+                <img src="images/pc/h-8.png" alt="초등" class="section-image">
+            </picture>
+        </section>
+
+        <!-- 중고등 섹션 -->
+        <section id="middle-high" class="content-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mob/h-9-m.png">
+                <img src="images/pc/h-9.png" alt="중고등" class="section-image">
+            </picture>
+        </section>
+
+        <!-- PRICE 섹션 -->
+        <section id="price" class="content-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mob/h-12-m.png">
+                <img src="images/pc/h-12.png" alt="PRICE" class="section-image">
+            </picture>
+        </section>
+
+        <!-- 문의하기 섹션 -->
+        <section id="contact" class="content-section">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/mob/h-13-m.png">
+                <img src="images/pc/h-13.png" alt="문의하기" class="section-image">
+            </picture>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>하와이 팜스 어학원</h3>
+                <p>2007년에 설립된 하와이 팜스 영어학교는 모든 연령, 영어 수준, 국적의 학생들이 진정한 알로하 정신이 담긴 영어 환경을 경험할 수 있는 모임의 장이 되어 왔습니다.</p>
+                <div class="footer-contact">
+                    <p><strong>연락처:</strong> 0502 1911 1001</p>
+                    <p><strong>주소:</strong> 서울 강동구 성내로6길 32 3층 345호</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">홈</a>
+                    <a href="#about">소개</a>
+                    <a href="#preschool">유아</a>
+                    <a href="#elementary">초등</a>
+                    <a href="#middle-high">중고등</a>
+                    <a href="#price">PRICE</a>
+                    <a href="#contact">문의하기</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 고정 버튼들 -->
+    <div class="fixed-buttons">
+        <button class="btn-top" id="btnTop" title="맨 위로">
+            <span>TOP</span>
+        </button>
+        <a href="#" class="btn-naver-talk-fixed" title="네이버톡톡 문의하기">
+            <span>톡톡</span>
+        </a>
+    </div>
+
+    <!-- 모바일 네이버톡톡 고정 하단 -->
+    <div class="mobile-naver-talk-fixed">
+        <a href="#" class="naver-talk-btn-mobile">네이버톡톡 문의하기</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
