@@ -279,14 +279,7 @@ if (heroSection) {
     });
 }
 
-// 네이버톡톡 버튼 클릭 이벤트 (실제 링크로 교체 필요)
-document.querySelectorAll('.naver-talk-btn, .naver-talk-btn-mobile, .btn-naver-talk-fixed').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        // 네이버톡톡 링크로 교체 필요
-        alert('네이버톡톡 문의하기 기능을 연결해주세요.');
-    });
-});
+// 네이버톡톡 버튼은 HTML의 href 속성으로 직접 연결됨
 
 // 섹션 이미지 로드 최적화
 const sectionImages = document.querySelectorAll('.section-image');
