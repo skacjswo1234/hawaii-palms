@@ -689,12 +689,7 @@ main {
     }
 
     .draggable-circle {
-        width: 100px;
-        height: 100px;
-    }
-
-    .draggable-circle span {
-        font-size: 11px;
+        display: none;
     }
 
     .nav-menu {
@@ -709,12 +704,7 @@ main {
 
 @media (max-width: 480px) {
     .draggable-circle {
-        width: 80px;
-        height: 80px;
-    }
-
-    .draggable-circle span {
-        font-size: 10px;
+        display: none;
     }
 
     .fixed-buttons {
