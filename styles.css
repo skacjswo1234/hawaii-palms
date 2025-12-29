@@ -503,6 +503,42 @@ main {
     display: block;
 }
 
+/* 문의하기 섹션 투명 버튼 */
+.contact-btn {
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-indent: -9999px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* PC 버튼들 */
+.contact-btn-bottom-pc {
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    height: 200px;
+    display: block;
+}
+
+.contact-btn-middle-pc {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 400px;
+    display: block;
+}
+
+/* 모바일 버튼들 - 기본 숨김 */
+.contact-btn-bottom-mob,
+.contact-btn-middle-mob {
+    display: none;
+}
+
 /* 푸터 */
 .footer {
     background-color: #2c3e50;
@@ -690,6 +726,33 @@ main {
 
     .draggable-circle {
         display: none;
+    }
+
+    /* 모바일에서 PC 버튼 숨기기 */
+    .contact-btn-bottom-pc,
+    .contact-btn-middle-pc {
+        display: none;
+    }
+
+    /* 모바일 버튼 표시 */
+    .contact-btn-bottom-mob {
+        display: block;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 300px;
+        height: 50px;
+    }
+
+    .contact-btn-middle-mob {
+        display: block;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 300px;
+        height: 50px;
     }
 
     .nav-menu {
