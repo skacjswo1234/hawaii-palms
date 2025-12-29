@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- 메인 페이지 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- 홈 섹션 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/#home</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- 소개 섹션 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/#about</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 유아 섹션 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/#preschool</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 초등 섹션 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/#elementary</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 중고등 섹션 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/#middle-high</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 문의하기 섹션 -->
+    <url>
+        <loc>https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/#contact</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>
+

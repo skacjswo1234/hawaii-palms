@@ -1,0 +1,25 @@
+# robots.txt for 하와이 팜스 어학원
+# https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/
+
+User-agent: *
+Allow: /
+
+# Sitemap 위치
+Sitemap: https://xn--9t4b29c7lusrzt52clvdna.xn--3e0b707e/sitemap.xml
+
+# 크롤링 금지할 디렉토리 (필요시 추가)
+# Disallow: /admin/
+# Disallow: /private/
+
+# 이미지 파일은 허용
+Allow: /images/
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.webp
+
+# CSS 및 JS 파일 허용
+Allow: /*.css
+Allow: /*.js
+
