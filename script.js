@@ -198,23 +198,30 @@ let heroTargetX = 0;
 let heroTargetY = 0;
 let heroCurrentX = 0;
 let heroCurrentY = 0;
+let isAnimating = false;
+let isMouseInHero = false;
 
 // 부드러운 애니메이션을 위한 함수
 function animateHeroCircle() {
-    if (!heroHoverCircle) return;
+    if (!heroHoverCircle || !isMouseInHero) {
+        isAnimating = false;
+        heroAnimationFrameId = null;
+        return;
+    }
     
     // 부드러운 이동을 위한 보간 (easing)
     const easing = 0.12;
-    heroCurrentX += (heroTargetX - heroCurrentX) * easing;
-    heroCurrentY += (heroTargetY - heroCurrentY) * easing;
+    const dx = heroTargetX - heroCurrentX;
+    const dy = heroTargetY - heroCurrentY;
     
-    heroHoverCircle.style.left = `${heroCurrentX}px`;
-    heroHoverCircle.style.top = `${heroCurrentY}px`;
+    heroCurrentX += dx * easing;
+    heroCurrentY += dy * easing;
     
-    // 움직임이 계속되면 애니메이션 계속
-    if (Math.abs(heroTargetX - heroCurrentX) > 0.1 || Math.abs(heroTargetY - heroCurrentY) > 0.1) {
-        heroAnimationFrameId = requestAnimationFrame(animateHeroCircle);
-    }
+    // transform을 사용하여 하드웨어 가속 활용 (리플로우 방지)
+    heroHoverCircle.style.transform = `translate(${heroCurrentX}px, ${heroCurrentY}px)`;
+    
+    // 계속 애니메이션 실행
+    heroAnimationFrameId = requestAnimationFrame(animateHeroCircle);
 }
 
 // 히어로 섹션 내에서만 원 표시
@@ -237,37 +244,60 @@ if (heroSection) {
         justify-content: center;
         transition: opacity 0.3s;
         will-change: transform;
+        transform: translate(0, 0);
+        left: 0;
+        top: 0;
     `;
     heroHoverCircle.innerHTML = '<span style="color: #333; font-size: 12px; font-weight: 600; text-align: center; padding: 10px; line-height: 1.4;">하와이팜스어학원</span>';
     heroSection.appendChild(heroHoverCircle);
 
+    // 히어로 섹션에 마우스 진입
+    heroSection.addEventListener('mouseenter', () => {
+        isMouseInHero = true;
+        if (heroHoverCircle) {
+            heroHoverCircle.style.display = 'flex';
+            heroHoverCircle.style.opacity = '1';
+        }
+        // 애니메이션 시작
+        if (!isAnimating) {
+            isAnimating = true;
+            heroAnimationFrameId = requestAnimationFrame(animateHeroCircle);
+        }
+    });
+
     // 히어로 섹션 내에서만 마우스 이동 감지
     heroSection.addEventListener('mousemove', (e) => {
+        if (!isMouseInHero) return;
+        
         const rect = heroSection.getBoundingClientRect();
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
         
-        // 히어로 섹션 내부에 있는지 확인
-        if (mouseX >= 0 && mouseX <= rect.width && mouseY >= 0 && mouseY <= rect.height) {
-            heroHoverCircle.style.display = 'flex';
-            heroHoverCircle.style.opacity = '1';
-            
-            heroTargetX = mouseX - 60;
-            heroTargetY = mouseY - 60;
-            
-            // 애니메이션 시작
-            if (!heroAnimationFrameId) {
-                heroAnimationFrameId = requestAnimationFrame(animateHeroCircle);
-            }
+        // 타겟 위치 업데이트 (원의 중심이 마우스 위치)
+        heroTargetX = mouseX - 60;
+        heroTargetY = mouseY - 60;
+        
+        // 처음 마우스 진입 시 현재 위치를 타겟 위치로 설정
+        if (heroCurrentX === 0 && heroCurrentY === 0) {
+            heroCurrentX = heroTargetX;
+            heroCurrentY = heroTargetY;
+            heroHoverCircle.style.transform = `translate(${heroCurrentX}px, ${heroCurrentY}px)`;
+        }
+        
+        // 애니메이션이 실행 중이 아니면 시작
+        if (!isAnimating) {
+            isAnimating = true;
+            heroAnimationFrameId = requestAnimationFrame(animateHeroCircle);
         }
     }, { passive: true });
 
     // 히어로 섹션에서 벗어나면 원 숨기기
     heroSection.addEventListener('mouseleave', () => {
+        isMouseInHero = false;
         if (heroHoverCircle) {
             heroHoverCircle.style.opacity = '0';
             setTimeout(() => {
-                if (heroHoverCircle) {
+                if (heroHoverCircle && !isMouseInHero) {
                     heroHoverCircle.style.display = 'none';
                 }
             }, 300);
@@ -275,7 +305,11 @@ if (heroSection) {
         if (heroAnimationFrameId) {
             cancelAnimationFrame(heroAnimationFrameId);
             heroAnimationFrameId = null;
+            isAnimating = false;
         }
+        // 위치 초기화
+        heroCurrentX = 0;
+        heroCurrentY = 0;
     });
 }
 
